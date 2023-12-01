@@ -1,0 +1,20 @@
+[build-system]
+requires = [
+    "setuptools>=40.6.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ProjectText"
+version = "0.1.0"
+description = "Library for obtaining and organizing text data from your Project Folders."
+readme = "README.md"
+authors = [
+    { name="Anton Potapov", email="fgreyeducation@gmail.com" }
+]
+license = { file="LICENSE" }
+dependencies = [
+    # List your dependencies here, e.g.,
+    # "requests>=2.23.0"
+]
