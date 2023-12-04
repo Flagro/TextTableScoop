@@ -1,4 +1,4 @@
-from .utils import iterate_directory_files, is_dir
+from .utils import iterate_directory_files, is_dir, get_parent_folder
 from .types import get_file_parser
 
 
@@ -35,12 +35,14 @@ class ProjectTraverser:
             self.process_directory(unpacked_folder_path, relative_path)
 
 
-def process(path, temp, ignore):
+def process(path, temp, project, ignore):
     ignore_patterns = [pattern.strip() for pattern in ignore.split(',')] if ignore else []
     json_output_collector = JSONOutputCollector()
     project_traverser = ProjectTraverser(ignore_patterns, temp, json_output_collector)
+    if project is None:
+        project = get_parent_folder(path)
     if is_dir(path):
         project_traverser.process_directory(path, "")
     else:
-        project_traverser.process_file(path, "")
+        project_traverser.process_file(path, project)
     return json_output_collector.get()
