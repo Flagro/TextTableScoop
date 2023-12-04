@@ -28,7 +28,7 @@ class ProjectTraverser:
             self.process_file(file_path, new_relative_path)
 
     def process_file(self, file_path, relative_path):
-        file_parser = get_file_parser(file_path, relative_path)
+        file_parser = get_file_parser(file_path, self._temp_folder_path)
         if file_parser.is_archive():
             self.process_archive(file_parser, relative_path)
         else:
