@@ -16,8 +16,11 @@ def get_folders_files(path, ignore_patterns):
         # Filter directories and files based on ignore patterns
         dirnames[:] = [d for d in dirnames if not should_ignore(os.path.join(dirpath, d), ignore_patterns)]
         filenames[:] = [f for f in filenames if not should_ignore(os.path.join(dirpath, f), ignore_patterns)]
+
         for filename in filenames:
-            folders_files.append(os.path.join(dirpath, filename))
+            full_path = os.path.join(dirpath, filename)
+            relative_path = os.path.relpath(full_path, start=path)
+            folders_files.append(relative_path)
     return folders_files
 
 
