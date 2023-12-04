@@ -11,7 +11,7 @@ def is_dir(path):
 
 
 def get_file_extension(file_path):
-    return os.path.splitext(file_path)[1]
+    return os.path.splitext(file_path)[1].replace(".", "")
 
 
 def get_file_name(file_path):
