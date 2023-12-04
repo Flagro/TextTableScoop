@@ -1,4 +1,4 @@
-from .utils import iterate_directory_files, is_dir, get_parent_folder
+from .utils import iterate_directory_files, is_dir, get_parent_folder, get_file_extension
 from .types import get_file_parser
 
 
@@ -28,14 +28,14 @@ class ProjectTraverser:
             self.process_file(file_path, new_relative_path)
 
     def process_file(self, file_path, relative_path):
-        file_parser = get_file_parser(file_path, self._temp_folder_path)
+        file_parser = get_file_parser(get_file_extension(file_path), self._temp_folder_path)
         if file_parser.is_archive():
-            self.process_archive(file_parser, relative_path)
+            self.process_archive(file_path, file_parser, relative_path)
         else:
-            self._json_output_collector.add(relative_path, file_parser.parse())
+            self._json_output_collector.add(relative_path, file_parser.parse(file_path))
 
-    def process_archive(self, file_parser, relative_path):
-        with file_parser.parse() as unpacked_folder_path:
+    def process_archive(self, file_path, file_parser, relative_path):
+        with file_parser.parse(file_path) as unpacked_folder_path:
             self.process_directory(unpacked_folder_path, relative_path)
 
 

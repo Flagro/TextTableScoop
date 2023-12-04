@@ -4,7 +4,7 @@ from .utils import get_file_extension
 
 archive_formats = ['.zip', '.rar', '.7z']
 table_formats = ['.csv', '.xls', '.xlsx', 'xlsb', 'xlsm']
-text_formats = ['.txt', '.html', '.xml', '.json', '.md', '.rst', '.tex', '.odt', 
+text_formats = ['.txt', '.html', '.xml', '.json', '.md', '.rst', '.tex', '.odt',
                 '.docx', '.doc', '.epub', '.fb2', '.djvu', '.rtf', '.pdf']
 
 
@@ -35,8 +35,8 @@ class TextParser(Parser):
         pass
 
 
-def get_file_parser(file_path, temp_folder_path):
-    file_extension = get_file_extension(file_path).lower()
+def get_file_parser(file_extension, temp_folder_path):
+    file_extension = file_extension.lower()
     if file_extension in archive_formats:
         return ArchiveParser(temp_folder_path)
     elif file_extension in table_formats:
