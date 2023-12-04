@@ -7,7 +7,11 @@ class JSONOutputCollector:
         self._output = []
 
     def add(self, file_path, **kwargs):
-        self._output.append(kwargs)
+        entry = {
+            "file_path": file_path,
+            "params": kwargs
+        }
+        self._output.append(entry)
 
     def get(self):
         return self._output
