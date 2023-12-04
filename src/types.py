@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from .utils import get_file_extension
 
 
 archive_formats = ['.zip', '.rar', '.7z']
@@ -9,7 +8,8 @@ text_formats = ['.txt', '.html', '.xml', '.json', '.md', '.rst', '.tex', '.odt',
 
 
 class Parser(ABC):
-    def __init__(self, temp_folder_path):
+    def __init__(self, file_extension, temp_folder_path):
+        self._file_extension = file_extension
         self._temp_folder_path = temp_folder_path
 
     @abstractmethod
@@ -38,10 +38,10 @@ class TextParser(Parser):
 def get_file_parser(file_extension, temp_folder_path):
     file_extension = file_extension.lower()
     if file_extension in archive_formats:
-        return ArchiveParser(temp_folder_path)
+        return ArchiveParser(file_extension, temp_folder_path)
     elif file_extension in table_formats:
-        return TableParser(temp_folder_path)
+        return TableParser(file_extension, temp_folder_path)
     elif file_extension in text_formats:
-        return TextParser(temp_folder_path)
+        return TextParser(file_extension, temp_folder_path)
     else:
         raise Exception("Unsupported file format: {}".format(file_extension))
