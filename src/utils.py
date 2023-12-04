@@ -2,12 +2,27 @@ import os
 import fnmatch
 
 
+def is_file(path):
+    return os.path.isfile(path)
+
+
+def is_dir(path):
+    return os.path.isdir(path)
+
+
 def get_file_extension(file_path):
     return os.path.splitext(file_path)[1]
 
 
 def get_file_name(file_path):
     return os.path.basename(file_path)
+
+
+def get_parent_folder(file_path):
+    if is_dir(file_path):
+        return file_path
+    else:
+        return os.path.dirname(file_path)
 
 
 def should_ignore(path, ignore_patterns):
@@ -24,11 +39,3 @@ def iterate_directory_files(path, ignore_patterns, parent_folder_path):
             full_path = os.path.join(dirpath, filename)
             relative_path = os.path.relpath(full_path, start=path)
             yield (full_path, os.path.join(parent_folder_path, relative_path))
-
-
-def is_file(path):
-    return os.path.isfile(path)
-
-
-def is_dir(path):
-    return os.path.isdir(path)
