@@ -10,8 +10,7 @@ def should_ignore(path, ignore_patterns):
     return any(fnmatch.fnmatch(path, pattern) for pattern in ignore_patterns)
 
 
-def get_folders_files(path, ignore_patterns):
-    folders_files = []
+def iterate_directory_files(path, ignore_patterns):
     for dirpath, dirnames, filenames in os.walk(path):
         # Filter directories and files based on ignore patterns
         dirnames[:] = [d for d in dirnames if not should_ignore(os.path.join(dirpath, d), ignore_patterns)]
@@ -20,8 +19,7 @@ def get_folders_files(path, ignore_patterns):
         for filename in filenames:
             full_path = os.path.join(dirpath, filename)
             relative_path = os.path.relpath(full_path, start=path)
-            folders_files.append(full_path, relative_path)
-    return folders_files
+            yield (full_path, relative_path)
 
 
 def is_file(path):
