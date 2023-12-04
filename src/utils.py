@@ -20,7 +20,7 @@ def get_folders_files(path, ignore_patterns):
         for filename in filenames:
             full_path = os.path.join(dirpath, filename)
             relative_path = os.path.relpath(full_path, start=path)
-            folders_files.append(relative_path)
+            folders_files.append(full_path, relative_path)
     return folders_files
 
 
