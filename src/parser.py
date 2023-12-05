@@ -1,7 +1,7 @@
 from .utils import iterate_directory_files, is_dir, get_parent_folder, get_file_extension
-from .archives.archives_parser import is_archive_file, ArchiveParser
-from .tables.tables_parser import is_table_file, TableParser
-from .text.text_parser import is_text_file, TextParser
+from .archives.archives_parser import is_archive_file, get_archive_parser
+from .tables.tables_parser import is_table_file, get_table_parser
+from .text.text_parser import is_text_file, get_text_parser
 
 
 class JSONOutputCollector:
@@ -43,11 +43,11 @@ class ProjectTraverser:
 
 def get_file_parser(file_extension, temp_folder_path):
     if is_archive_file(file_extension):
-        return ArchiveParser(file_extension, temp_folder_path)
+        return get_archive_parser(file_extension, temp_folder_path)
     elif is_table_file(file_extension):
-        return TableParser(file_extension, temp_folder_path)
+        return get_table_parser(file_extension, temp_folder_path)
     elif is_text_file(file_extension):
-        return TextParser(file_extension, temp_folder_path)
+        return get_text_parser(file_extension, temp_folder_path)
     else:
         raise Exception("Unsupported file format: {}".format(file_extension))
 
