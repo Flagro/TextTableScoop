@@ -1,5 +1,4 @@
 from .utils import iterate_directory_files, is_dir, get_parent_folder, get_file_extension
-from .types import get_file_parser
 from .archives.archives_parser import is_archive_file, ArchiveParser
 from .tables.tables_parser import is_table_file, TableParser
 from .text.text_parser import is_text_file, TextParser
