@@ -2,20 +2,12 @@ import os
 import fnmatch
 
 
-def is_file(path):
-    return os.path.isfile(path)
-
-
 def is_dir(path):
     return os.path.isdir(path)
 
 
 def get_file_extension(file_path):
     return os.path.splitext(file_path)[1].replace(".", "")
-
-
-def get_file_name(file_path):
-    return os.path.basename(file_path)
 
 
 def get_parent_folder(file_path):
