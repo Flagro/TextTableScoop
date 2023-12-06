@@ -1,6 +1,6 @@
 from ..text_parser import TextParser
 
-class TXTParser(TextParser):
+class HTMLParser(TextParser):
     def parse(self, path):
         with open(path, 'r') as file:
             # Read the file content
