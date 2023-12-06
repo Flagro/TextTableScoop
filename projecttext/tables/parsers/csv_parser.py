@@ -1,6 +1,6 @@
 import pandas as pd
 
-from ..base_parser import TableParser
+from ...base_parser import TableParser
 
 
 class CSVParser(TableParser):
