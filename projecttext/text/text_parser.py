@@ -1,23 +1,5 @@
-from abc import abstractmethod
-
-from ..base_parser import BaseParser
 from .parsers.txt_parser import TXTParser
 from .parsers.html_parser import HTMLParser
-
-
-class TextParser(BaseParser):
-    def parse(self, path):
-        text = self.get_text(path)
-        result_dict = {
-            'type': 'text',
-            'text': text,
-        }
-        return result_dict
-
-    @abstractmethod
-    def get_text(self, path):
-        # Get text from text file
-        pass
 
 
 def is_text_file(file_extension):

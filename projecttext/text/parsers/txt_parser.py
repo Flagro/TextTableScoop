@@ -1,4 +1,5 @@
-from ..text_parser import TextParser
+from ..base_parser import TextParser
+
 
 class TXTParser(TextParser):
     def get_text(self, path):
