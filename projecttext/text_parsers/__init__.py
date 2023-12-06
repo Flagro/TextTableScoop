@@ -1,5 +1,5 @@
-from .parsers.txt_parser import TXTParser
-from .parsers.html_parser import HTMLParser
+from .txt_parser import TXTParser
+from .html_parser import HTMLParser
 
 
 def is_text_file(file_extension):

@@ -1,4 +1,4 @@
-from .parsers.csv_parser import CSVParser
+from .csv_parser import CSVParser
 
 
 def is_table_file(file_extension):

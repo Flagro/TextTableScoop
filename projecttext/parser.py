@@ -1,7 +1,7 @@
 from .utils import iterate_directory_files, is_dir, get_parent_folder, get_file_extension
-from .archives.archives_parser import is_archive_file, get_archive_parser
-from .tables.tables_parser import is_table_file, get_table_parser
-from .text.text_parser import is_text_file, get_text_parser
+from .archive_parsers import is_archive_file, get_archive_parser
+from .table_parsers import is_table_file, get_table_parser
+from .text_parsers import is_text_file, get_text_parser
 
 
 class JSONOutputCollector:
