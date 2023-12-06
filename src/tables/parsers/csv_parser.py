@@ -1,8 +1,8 @@
+import pandas as pd
+
 from ..tables_parser import TableParser
 
 class CSVParser(TableParser):
-    def parse(self, path):
-        with open(path, 'r') as file:
-            # Read the file content
-            content = file.read()
-        return content
+    def get_pandas_dataframe(self, path):
+        df = pd.read_csv(path)
+        return df
