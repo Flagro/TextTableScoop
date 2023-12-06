@@ -34,7 +34,7 @@ class ProjectTraverser:
         if file_parser.is_archive():
             self.process_archive(file_path, file_parser, relative_path)
         else:
-            self._json_output_collector.add(relative_path, file_parser.parse(file_path))
+            self._json_output_collector.add(relative_path, parsed_data=file_parser.parse(file_path))
 
     def process_archive(self, file_path, file_parser, relative_path):
         with file_parser.parse(file_path) as unpacked_folder_path:
