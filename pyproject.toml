@@ -15,6 +15,7 @@ authors = [
 ]
 license = { file="LICENSE" }
 dependencies = [
-    # List your dependencies here, e.g.,
-    # "requests>=2.23.0"
+    "argparse",
+    "argcomplete",
+    "pandas"
 ]
