@@ -3,8 +3,8 @@
 # PYTHON_ARGCOMPLETE_OK
 
 import sys
-from projecttext.cli import get_args
-from projecttext.parser import process
+from projecttextparser.cli import get_args
+from projecttextparser.parser import process
 
 
 def main():

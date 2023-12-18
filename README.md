@@ -1,6 +1,6 @@
-# 📝 ProjectText
+# 📝 ProjectTextParser
 
-Welcome to `ProjectText` 🌟, a versatile tool designed for extracting text from files and CSV tables, particularly focusing on Office files like Excel, PowerPoint, etc. This project is part of a suite that includes [`ProjectTextAgent`](https://github.com/Flagro/ProjectTextAgent) and [`ProjectDataBaseQnA`](https://github.com/Flagro/ProjectDataBaseQnA).
+Welcome to `ProjectTextParser` 🌟, a versatile tool designed for extracting text from files and CSV tables, particularly focusing on Office files like Excel, PowerPoint, etc. This project is part of a suite that includes [`ProjectTextAgent`](https://github.com/Flagro/ProjectTextAgent) and [`ProjectDataBaseQnA`](https://github.com/Flagro/ProjectDataBaseQnA).
 
 ## 🚀 Features
 
@@ -11,15 +11,15 @@ Welcome to `ProjectText` 🌟, a versatile tool designed for extracting text fro
 
 ## 📥 Installation
 
-To install `ProjectText`, use the following pip command:
+To install `ProjectTextParser`, use the following pip command:
 ```bash
-pip3 install git+https://github.com/Flagro/ProjectText.git
+pip3 install git+https://github.com/Flagro/ProjectTextParser.git
 ```
 
 
 ## 🛠️ Usage
 
-Run `ProjectText` from the bin folder with these arguments:
+Run `ProjectTextParser` from the bin folder with these arguments:
 
 1. `path`: Path to the file or directory to process.
 2. `-t` or `--temp`: (Optional) Path to a custom temporary folder.
@@ -28,7 +28,7 @@ Run `ProjectText` from the bin folder with these arguments:
 
 ### 🖥️ Example Command
 ```bash
-projecttext 'path/to/file' --temp 'path/to/temp' --project 'path/to/project' --ignore 'pattern1,pattern2'
+projecttextparser 'path/to/file' --temp 'path/to/temp' --project 'path/to/project' --ignore 'pattern1,pattern2'
 ```
 
 ## 🤝 Contributing
