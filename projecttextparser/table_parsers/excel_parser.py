@@ -5,7 +5,7 @@ from ..base_parser import TableParser
 
 
 class ExcelParser(TableParser):
-    def get_pandas_dataframes(self, path):
+    def get_dataframes(self, path):
         output = get_df(path, prettify_output=False)
         result = []
         for sheet_name, dfs in output.items():
