@@ -16,28 +16,33 @@ class BaseParser(ABC):
 
 class TextParser(BaseParser):
     def parse(self, path):
-        text = self.get_text(path)
-        result_dict = {
-            'type': 'text',
-            'text': text,
-        }
-        return result_dict
+        texts = self.get_texts(path)
+        result = []
+        for text, metadata in texts:
+            result.append({
+                'data_type': 'text',
+                'text': text,
+                'metadata': metadata
+            })
+        return result
 
     @abstractmethod
-    def get_text(self, path):
+    def get_texts(self, path):
         # Get text from text file
         pass
 
 
 class TableParser(BaseParser):
     def parse(self, path):
-        df = self.get_dataframes(path)
-
-        result_dict = {
-            'type': 'table',
-            'csv_text': df.to_csv(),
-        }
-        return result_dict
+        dfs = self.get_dataframes(path)
+        result = []
+        for df, metadata in dfs:
+            result.append({
+                'data_type': 'table',
+                'csv_text': df.to_csv(),
+                'metadata': metadata
+            })
+        return result
 
     @abstractmethod
     def get_dataframes(self, path):
