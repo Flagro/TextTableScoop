@@ -1,4 +1,3 @@
-import pandas as pd
 from projecttextexcel import get_df
 
 from ..base_parser import TableParser
