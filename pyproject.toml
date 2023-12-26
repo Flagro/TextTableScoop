@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "projecttextparser"
+name = "texttablescoop"
 version = "0.1.0"
 description = "Library for obtaining and organizing text data from your Project Folders."
 readme = "README.md"

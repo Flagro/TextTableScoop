@@ -1,6 +1,6 @@
-# 📝 ProjectTextParser
+# 📝 TextTableScoop
 
-Welcome to `ProjectTextParser` 🌟, a versatile tool designed for extracting text from files and CSV tables, particularly focusing on Office files like Excel, PowerPoint, etc. This project is part of a suite that includes [`ProjectTextAgent`](https://github.com/Flagro/ProjectTextAgent) and [`ProjectDataBaseQnA`](https://github.com/Flagro/ProjectDataBaseQnA).
+Welcome to `TextTableScoop` 🌟, a versatile tool designed for extracting text from files and CSV tables, particularly focusing on Office files like Excel, PowerPoint, etc. This project is part of a ['ProjectText'](https://github.com/Flagro/ProjectTextSuite) suite that includes [`ProjectTextAgent`](https://github.com/Flagro/ProjectTextAgent) and [`ProjectDataBaseQnA`](https://github.com/Flagro/ProjectDataBaseQnA).
 
 ## 🚀 Features
 
@@ -11,15 +11,15 @@ Welcome to `ProjectTextParser` 🌟, a versatile tool designed for extracting te
 
 ## 📥 Installation
 
-To install `ProjectTextParser`, use the following pip command:
+To install `TextTableScoop`, use the following pip command:
 ```bash
-pip3 install git+https://github.com/Flagro/ProjectTextParser.git
+pip3 install git+https://github.com/Flagro/TextTableScoop.git
 ```
 
 
 ## 🛠️ Usage
 
-Run `ProjectTextParser` from the bin folder with these arguments:
+Run `TextTableScoop` from the bin folder with these arguments:
 
 1. `path`: Path to the file or directory to process.
 2. `-t` or `--temp`: (Optional) Path to a custom temporary folder.
