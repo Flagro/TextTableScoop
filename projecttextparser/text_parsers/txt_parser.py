@@ -6,4 +6,4 @@ class TXTParser(TextParser):
         with open(path, 'r') as file:
             # Read the file content
             content = file.read()
-        return content
+        return [(content, {})]
