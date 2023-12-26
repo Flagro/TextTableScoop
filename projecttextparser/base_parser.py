@@ -31,7 +31,8 @@ class TextParser(BaseParser):
 
 class TableParser(BaseParser):
     def parse(self, path):
-        df = self.get_pandas_dataframe(path)
+        df = self.get_dataframes(path)
+
         result_dict = {
             'type': 'table',
             'csv_text': df.to_csv(),
@@ -39,8 +40,8 @@ class TableParser(BaseParser):
         return result_dict
 
     @abstractmethod
-    def get_pandas_dataframe(self, path):
-        # Process table file (e.g., CSV, Excel)
+    def get_dataframes(self, path):
+        # Process table file (e.g., CSV, Excel) and return a list of dicts {"dataframe": pd.DataFrame, "metadata": dict"}
         pass
 
 
