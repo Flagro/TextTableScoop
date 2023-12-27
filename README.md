@@ -19,7 +19,7 @@ pip3 install git+https://github.com/Flagro/TextTableScoop.git
 
 ## 🛠️ Usage
 
-Run `TextTableScoop` from the bin folder with these arguments:
+Run `texttablescoop` from the bin folder with these arguments:
 
 1. `path`: Path to the file or directory to process.
 2. `-t` or `--temp`: (Optional) Path to a custom temporary folder.
@@ -28,7 +28,7 @@ Run `TextTableScoop` from the bin folder with these arguments:
 
 ### 🖥️ Example Command
 ```bash
-projecttextparser 'path/to/file' --temp 'path/to/temp' --project 'path/to/project' --ignore 'pattern1,pattern2'
+texttablescoop 'path/to/file' --temp 'path/to/temp' --project 'path/to/project' --ignore 'pattern1,pattern2'
 ```
 
 ## 🤝 Contributing
