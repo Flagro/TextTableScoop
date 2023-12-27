@@ -1,4 +1,4 @@
-from projecttextexcel import get_df
+from xlsx2pandas import get_df
 
 from ..base_parser import TableParser
 
