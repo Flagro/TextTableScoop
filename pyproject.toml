@@ -17,6 +17,5 @@ license = { file="LICENSE" }
 dependencies = [
     "argparse",
     "argcomplete",
-    "pandas",
-    "xlsx2pandas"
+    "pandas"
 ]
