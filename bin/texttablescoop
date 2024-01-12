@@ -3,6 +3,7 @@
 # PYTHON_ARGCOMPLETE_OK
 
 import sys
+import json
 from texttablescoop.cli import get_args
 from texttablescoop.parser import process
 
@@ -15,7 +16,7 @@ def main():
         sys.stderr.write(e + '\n')
         sys.exit(1)
     else:
-        print(output)
+        print(json.dumps(output))
 
 
 main()
