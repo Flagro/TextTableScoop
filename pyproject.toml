@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "texttablescoop"
-version = "0.1.2"
+version = "0.0.0"
 description = "Library for obtaining and organizing text data from your Project Folders."
 readme = "README.md"
 authors = [
